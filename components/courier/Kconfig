@@ -1,0 +1,10 @@
+config COMPONENT_COURIER
+    bool "Courier Support for Nuttx"
+    help
+        Courier Component forwards all M0 IRQ's to the D0 core for NuttX
+        support. Enable this component if you are running NuttX on 
+        the D0 core.
+
+        Please see the README.md file in the Mailbox component directory
+        for more information
+
