@@ -1,5 +1,5 @@
-#ifndef __OBLFR_MAILBOX_NUTTX_H__
-#define __OBLFR_MAILBOX_NUTTX_H__
+#ifndef __OBLFR_COURIER_H__
+#define __OBLFR_COURIER_H__
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -37,19 +37,9 @@ enum m0_interrupt_source_e {
   BFLB_IPC_DEVICE_HBN_OUT1
 };
 
-/* MailBox Service */
-#define BFLB_IPC_MBOX_VIRTIO            1
-
-/* Operations for MBOX_VIRTIO */
-#define BFLB_IPC_MBOX_VIRTIO_OP_KICK    1
-
-typedef void (*mbox_signal_handler_t)(uint16_t service, uint16_t op, uint32_t param, void *arg);
+#define IPC_IRQn_MASK 0xff // bits 0-7
+#define IPC_INT_SIG_SHIFT 8
+#define IPC_INT_ENABLE_SIG_SHIFT 9
 
 oblfr_err_t oblfr_mailbox_nuttx_init(void);
-
-oblfr_err_t oblfr_mailbox_nuttx_add_signal_handler(uint16_t service, uint16_t op, mbox_signal_handler_t handler, void *arg);
-oblfr_err_t oblfr_mailbox_nuttx_del_signal_handler(uint16_t service, uint16_t op );
-oblfr_err_t oblfr_mailbox_nuttx_send_signal(uint16_t service, uint16_t op, uint32_t data);
-oblfr_err_t oblfr_mailbox_nuttx_mask_signal(uint16_t service, uint16_t op);
-oblfr_err_t oblfr_mailbox_nuttx_unmask_signal(uint16_t service, uint16_t op);
 #endif

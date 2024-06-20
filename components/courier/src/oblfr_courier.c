@@ -23,7 +23,7 @@ typedef struct {
     uint32_t irq;
     uint32_t count;
     void (*handler)(int irq, void *arg);
-} mbox_irq_t;
+} courier_irq_t;
 
 static void Send_IPC_IRQ(int device);
 
@@ -35,7 +35,7 @@ static void SDHCI_IRQHandler(int irq, void *arg)
 
 static void UART2_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got UART2 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_UART2);
 }
 
@@ -59,119 +59,119 @@ static void GPIO_IRQHandler(int irq, void *arg)
 
 static void DMA0_ALL_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got DMA0 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_DMA0_ALL);
 }
 
 static void DMA1_ALL_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got DMA1 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_DMA1_ALL);
 }
 
 static void IRTX_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got IRTX IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_IRTX);
 }
 
 static void IRRX_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got IRRX IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_IRRX);
 }
 
 static void GPADC_DMA_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got GPADC_DMA IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_GPADC_DMA);
 }
 
 static void SPI0_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got SPI0 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_SPI0);
 }
 
 static void UART0_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got UART0 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_UART0);
 }
 
 static void UART1_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got UART1 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_UART1);
 }
 
 static void GPIO_DMA_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got GPIO_DMA IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_GPIO_DMA);
 }
 
 static void I2C0_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got I2C0 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_I2C0);
 }
 
 static void I2C1_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got I2C1 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_I2C1);
 }
 
 static void PWM_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got PWM IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_PWM);
 }
 
 static void TIMER0_CH0_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got TIMER0_CH0 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_TIMER0_CH0);
 }
 
 static void TIMER0_CH1_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got TIMER0_CH1 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_TIMER0_CH1);
 }
 
 static void TIMER0_WDT_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got TIMER0_WDT IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_TIMER0_WDT);
 }
 
 static void I2S_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got I2S IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_I2S);
 }
 
 static void PDS_WAKEUP_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got PDS IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_PDS_WAKEUP);
 }
 
 static void HBN_OUT0_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got HBN_OUT0 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_HBN_OUT0);
 }
 
 static void HBN_OUT1_IRQHandler(int irq, void *arg)
 {
-    LOG_T("Got UART IRQ\r\n");
+    LOG_T("Got HBN_OUT1 IRQ\r\n");
     Send_IPC_IRQ(BFLB_IPC_DEVICE_HBN_OUT1);
 }
 
-mbox_irq_t nuttx_ipc_irqs[32] = {
+courier_irq_t nuttx_ipc_irqs[32] = {
     [BFLB_IPC_DEVICE_SDHCI] = { "SDH", SDH_IRQn, 0, SDHCI_IRQHandler},
     [BFLB_IPC_DEVICE_UART2] = { "UART2", UART2_IRQn, 0, UART2_IRQHandler},
     [BLFB_IPC_DEVICE_USB] = { "USB", USB_IRQn, 0, USB_IRQHandler},
@@ -193,7 +193,7 @@ mbox_irq_t nuttx_ipc_irqs[32] = {
     [BFLB_IPC_DEVICE_TIMER0_CH1] = { "TIMER0_CH1", TIMER0_CH1_IRQn, 0, TIMER0_CH1_IRQHandler},
     [BFLB_IPC_DEVICE_TIMER0_WDT] = { "TIMER0_WDT", TIMER0_WDT_IRQn, 0, TIMER0_WDT_IRQHandler},
     [BFLB_IPC_DEVICE_I2S] = { "I2S", I2S_IRQn, 0, I2S_IRQHandler},
-    [BFLB_IPC_DEVICE_PDS_WAKEUP] = { "PDS_WAKEUP", PDS_WAKEUP_IRQn, 0, PDS_WAKEUP_IRQHandler},
+    //[BFLB_IPC_DEVICE_PDS_WAKEUP] = { "PDS_WAKEUP", PDS_WAKEUP_IRQn, 0, PDS_WAKEUP_IRQHandler},
     [BFLB_IPC_DEVICE_HBN_OUT0] = { "HBN_OUT0", HBN_OUT0_IRQn, 0, HBN_OUT0_IRQHandler},
     [BFLB_IPC_DEVICE_HBN_OUT1] = { "HBN_OUT1", HBN_OUT1_IRQn, 0, HBN_OUT1_IRQHandler},
 };
@@ -204,10 +204,29 @@ static void Send_IPC_IRQ(int device)
         LOG_E("Invalid IPC IRQ %d\r\n", device);
         return;
     }
-    bflb_irq_disable(nuttx_ipc_irqs[device].irq);
-    BL_WR_REG(IPC2_BASE, IPC_CPU1_IPC_ISWR, (1 << device));
+    LOG_I("Forward");
+    bflb_irq_disable(nuttx_ipc_irqs[device].irq); // D0 will need to reenable
+    // Bits 0-7 will indicate IRQ number. Bit 8 will set off the interrupt.
+    BL_WR_REG(IPC2_BASE, IPC_CPU1_IPC_ISWR, nuttx_ipc_irqs[device].irq | (1 << IPC_INT_SIG_SHIFT));
     nuttx_ipc_irqs[device].count++;
 }
+
+void IPC_M0_IRQHandler(int irq, void *arg)
+{
+  uint32_t irqStatus = BL_RD_REG(IPC0_BASE, IPC_CPU0_IPC_IRSRR);
+  int irqn = irqStatus & IPC_IRQn_MASK;
+  bool enable = irqStatus & (1 << IPC_INT_ENABLE_SIG_SHIFT);
+  if (enable) {
+    LOG_I("Got enable signal for IRQn %d", irqn);
+    bflb_irq_enable(irqn);
+  } else {
+    LOG_I("Got disable signal for IRQn %d", irqn);
+    bflb_irq_disable(irqn);
+  }
+
+  BL_WR_REG(IPC0_BASE, IPC_CPU0_IPC_ICR, irqStatus);
+}
+  
 
 oblfr_err_t setup_sdh_peripheral() {
     LOG_D("setting up SDH peripheral\r\n");
@@ -243,6 +262,11 @@ static oblfr_err_t setup_emac_peripheral(void)
 oblfr_err_t oblfr_courier_init()
 {
     int i;
+
+    /* setup the IPC Interupt */
+    bflb_irq_attach(IPC_M0_IRQn, IPC_M0_IRQHandler, NULL);
+    BL_WR_REG(IPC0_BASE, IPC_CPU0_IPC_IUSR, (1 << IPC_INT_SIG_SHIFT));
+    bflb_irq_enable(IPC_M0_IRQn);
 
     /* register our Interupt Handlers to forward over */
 
